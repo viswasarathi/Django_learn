@@ -5,3 +5,9 @@ from django.http import HttpResponse
 
 def index(request):
     return render(request,'home.html',{'name':'viswa'})
+
+def add(request):
+    x = request.GET['n1']
+    y = request.GET['n2']
+    res = int(x) + int(y)
+    return render(request,'result.html',{'result':res})
